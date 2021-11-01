@@ -24,7 +24,7 @@ if __name__ == "__main__":
     sites = ["https://telex.hu", "https://444.hu", "https://24.hu", "https://hvg.hu", "https://index.hu", \
             "https://www.magyarhirlap.hu", "https://origo.hu", "https://magyarnemzet.hu", "https://hirado.hu"]
 
-    # Searched keywords an their blacklisted exception phrases
+    # Searched keywords and their blacklisted exception phrases
     words = {
                  "meghal": ["meghall", "meghalad"],
                  "halott": ["halottak napj", "halottaskocsi", "halottkém", "halottnak a csók", "halottkultusz"],
