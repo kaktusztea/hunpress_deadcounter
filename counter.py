@@ -14,8 +14,11 @@ sites = ["https://telex.hu", "https://444.hu", "https://24.hu", "https://hvg.hu"
 words = ["meghal", "halott", "megöl", "áldozat"]
 
 for sitename in sites:
+    summa = 0
     print("[%s]" % sitename)
     text = get_page_text(sitename)
     for word in words:
-        print("%s: %s" % (word, str(text.count(word))))
-    print("")
+        ct = text.count(word)
+        summa += ct
+        print("%s: %s" % (word, str(ct)))
+    print("(%s)\n" % str(summa))
