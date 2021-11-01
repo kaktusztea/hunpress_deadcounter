@@ -3,51 +3,60 @@ meghal: 6
 halott: 1
 megöl: 0
 áldozat: 2
+(9)
 
 [https://444.hu]
 meghal: 3
 halott: 0
 megöl: 0
 áldozat: 2
+(5)
 
 [https://24.hu]
 meghal: 3
 halott: 1
 megöl: 1
 áldozat: 0
+(5)
 
 [https://hvg.hu]
 meghal: 0
 halott: 3
 megöl: 0
 áldozat: 0
+(3)
 
 [https://index.hu]
-meghal: 2
+meghal: 3
 halott: 6
 megöl: 0
 áldozat: 2
+(11)
 
 [https://www.magyarhirlap.hu]
 meghal: 0
 halott: 0
 megöl: 0
 áldozat: 0
+(0)
 
 [https://origo.hu]
-meghal: 3
+meghal: 2
 halott: 2
 megöl: 1
 áldozat: 0
+(5)
 
 [https://magyarnemzet.hu]
 meghal: 0
 halott: 3
 megöl: 0
 áldozat: 0
+(3)
 
 [https://hirado.hu]
-meghal: 2
+meghal: 4
 halott: 7
 megöl: 0
 áldozat: 0
+(11)
