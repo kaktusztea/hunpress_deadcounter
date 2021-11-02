@@ -1,16 +1,17 @@
-# hunpress_deadcounter
+# Hunpress Deadcounter
 Egy egyszerű python script segítségével statisztikát kaphatunk a magyar sajtó legnagyobb online portáljainak aktuális halálhír dömpingjéről.
 
-Környezet beállítása
+### Környezet beállítása
 ```
 git clone https://github.com/kaktusztea/hunpress_deadcounter.git
 cd hunpress_deadcounter
-python3 -m venv .
+python3 -m venv venv
 source bin/activate
-pip install bs4 requests
+pip install --upgrade -i https://pypi.org/simple pip
+pip install -i https://pypi.org/simple bs4 requests
 ```
 
-Script futtatása
+### Script futtatása
 ```
 ./counter.py
 ```
