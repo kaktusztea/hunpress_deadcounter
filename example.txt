@@ -1,62 +1,109 @@
 [https://telex.hu]
-meghal: 6
-halott: 1
-megöl: 0
-áldozat: 2
-(9)
-
-[https://444.hu]
-meghal: 3
+meghal: 0
 halott: 0
 megöl: 0
-áldozat: 2
-(5)
+áldozat: 0
+agyonvert: 0
+meggyilkol: 0
+gyilkos: 1
+(1)
+
+[https://444.hu]
+meghal: 0
+halott: 0
+megöl: 0
+áldozat: 0
+agyonvert: 0
+meggyilkol: 0
+gyilkos: 0
+(0)
 
 [https://24.hu]
-meghal: 3
-halott: 1
-megöl: 1
+meghal: 2
+halott: 2
+megöl: 0
 áldozat: 0
-(5)
+agyonvert: 0
+meggyilkol: 0
+gyilkos: 2
+(6)
 
 [https://hvg.hu]
 meghal: 0
-halott: 3
+halott: 0
 megöl: 0
 áldozat: 0
-(3)
+agyonvert: 0
+meggyilkol: 0
+gyilkos: 0
+(0)
 
 [https://index.hu]
-meghal: 3
-halott: 6
+meghal: 1
+halott: 1
 megöl: 0
-áldozat: 2
-(11)
+áldozat: 0
+agyonvert: 0
+meggyilkol: 0
+gyilkos: 1
+(3)
 
 [https://www.magyarhirlap.hu]
 meghal: 0
 halott: 0
 megöl: 0
-áldozat: 0
-(0)
+áldozat: 1
+agyonvert: 0
+meggyilkol: 0
+gyilkos: 0
+(1)
 
 [https://origo.hu]
-meghal: 2
-halott: 2
-megöl: 1
-áldozat: 0
-(5)
+meghal: 4
+halott: 0
+megöl: 2
+áldozat: 2
+agyonvert: 0
+meggyilkol: 0
+gyilkos: 3
+(11)
 
 [https://magyarnemzet.hu]
 meghal: 0
-halott: 3
+halott: 0
 megöl: 0
-áldozat: 0
-(3)
+áldozat: 1
+agyonvert: 0
+meggyilkol: 1
+gyilkos: 0
+(2)
 
 [https://hirado.hu]
-meghal: 4
-halott: 7
+meghal: 0
+halott: 0
 megöl: 0
 áldozat: 0
-(11)
+agyonvert: 0
+meggyilkol: 0
+gyilkos: 1
+(1)
+
+[https://tenyek.hu]
+meghal: 3
+halott: 0
+megöl: 3
+áldozat: 0
+agyonvert: 0
+meggyilkol: 2
+gyilkos: 2
+(10)
+
+[https://blikk.hu]
+meghal: 2
+halott: 1
+megöl: 0
+áldozat: 0
+agyonvert: 0
+meggyilkol: 0
+gyilkos: 0
+(3)

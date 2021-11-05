@@ -21,8 +21,9 @@ def get_page_text(url):
 if __name__ == "__main__":
 
     # Observered websites
-    sites = ["https://telex.hu", "https://444.hu", "https://24.hu", "https://hvg.hu", "https://index.hu", \
-            "https://www.magyarhirlap.hu", "https://origo.hu", "https://magyarnemzet.hu", "https://hirado.hu"]
+    sites = ["https://telex.hu", "https://444.hu", "https://24.hu", "https://hvg.hu", "https://index.hu",      \
+            "https://www.magyarhirlap.hu", "https://origo.hu", "https://magyarnemzet.hu", "https://hirado.hu", \
+            "https://tenyek.hu", "https://blikk.hu"]
 
     # Searched keywords and their blacklisted exception phrases
     words = {
