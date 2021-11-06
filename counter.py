@@ -97,33 +97,38 @@ def poll_sites(sites, words):
             summa += nct
             if detailed == Detailed.HIGH:
                 print("%s: %s" % (key, str(nct)))
-            sql_store(dt, sitename, key, nct)
+            if sql:
+                sql_store(dt, sitename, key, nct)
         if detailed >= Detailed.MEDIUM:
             print("(%s)" % str(summa))
-        sql_store(dt, sitename, "sum", summa)
+        if sql:
+            sql_store(dt, sitename, "sum", summa)
 
 
 def ctrlc_handler(signum, frame):
     print("\nPolling ended. Exiting.")
-    connection.close()
-    if debug:
-        print("[DEBUG] SQLite connection closed.")
+    if sql:
+        connection.close()
+        if debug:
+            print("[DEBUG] SQLite connection closed.")
     sys.exit(1)
 
 
 def main():
-    global connection, detailed, debug         # SQLite connection, detailed mode, debug mode
+    global connection, detailed, debug, sql    # SQLite connection, detailed mode, debug mode, SQLite storing
     period = 1                                 # polling period in minutes
     iteration = 1                              # counter for polling loop
     detailed = Detailed.HIGH
     debug = True
+    sql = True
 
-    connection = sql_init()
-    if connection and debug:
-        print("[DEBUG] SQLite connection opened.")
-    elif not connection:
-        print("[ERROR] No SQLite connection.")
-        sys.exit(1)
+    if sql:
+        connection = sql_init()
+        if connection and debug:
+            print("[DEBUG] SQLite connection opened.")
+        elif not connection:
+            print("[ERROR] No SQLite connection.")
+            sys.exit(1)
 
     # Observered websites
     sites = ["https://telex.hu", "https://444.hu", "https://24.hu", "https://hvg.hu", "https://index.hu",      \
