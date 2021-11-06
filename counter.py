@@ -54,9 +54,9 @@ def sql_connection(dbfile):
 def sql_table_init(con):
     cur = con.cursor()
     cur.execute("CREATE TABLE stats(id integer PRIMARY KEY AUTOINCREMENT,  \
-                                    date TIMESTAMP NOT NULL, \
-                                    sitename TEXT NOT NULL,  \
-                                    word TEXT NOT NULL,       \
+                                    date TIMESTAMP NOT NULL,               \
+                                    sitename TEXT NOT NULL,                \
+                                    word TEXT NOT NULL,                    \
                                     count INTEGER);")
     con.commit()
 
@@ -96,11 +96,11 @@ def poll_sites(sites, words):
             nct = (ct - bct)
             summa += nct
             if detailed == Detailed.HIGH:
-                print("%s: %s" % (key, str(nct)))
+                print("%s: %d" % (key, nct))
             if sql:
                 sql_store(dt, sitename, key, nct)
         if detailed >= Detailed.MEDIUM:
-            print("(%s)" % str(summa))
+            print("(%d)" % summa)
         if sql:
             sql_store(dt, sitename, "sum", summa)
 
@@ -119,9 +119,9 @@ def main():
 
     # Runtime variables
     period = 1                                 # polling period in minutes
-    detailed = Detailed.HIGH
-    debug = True
-    sql = True
+    detailed = Detailed.HIGH                   # Level of output detail: [LOW, MEDIUM, HIGH]
+    debug = True                               # Print out basic SQL operations, sleep steps
+    sql = True                                 # Store results in SQLite database or not
 
     if sql:
         connection = sql_init()
@@ -147,14 +147,15 @@ def main():
                  "gyilkos": ["gyilkos tréfa"]
                 }
 
+    # Handling CTRL+C event
     signal.signal(signal.SIGINT, ctrlc_handler)
 
     print("\nPolling starts, interval: %d minute(s)." % period)
     print("Stop by pressing CTRL+C.\n")
     iteration = 1                              # counter for polling loop
 
-    while True:                                          # endless loop, break by CTRL+C
-        print("#%s." % str(iteration))
+    while True:                                # endless loop, break by CTRL+C
+        print("#%d." % iteration)
         poll_sites(sites, words)
         if debug:
             print("\n[DEBUG] Sleeping %d seconds.\n" % 60 * period)
