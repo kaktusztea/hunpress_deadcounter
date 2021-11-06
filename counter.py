@@ -116,8 +116,9 @@ def ctrlc_handler(signum, frame):
 
 def main():
     global connection, detailed, debug, sql    # SQLite connection, detailed mode, debug mode, SQLite storing
+
+    # Runtime variables
     period = 1                                 # polling period in minutes
-    iteration = 1                              # counter for polling loop
     detailed = Detailed.HIGH
     debug = True
     sql = True
@@ -147,9 +148,11 @@ def main():
                 }
 
     signal.signal(signal.SIGINT, ctrlc_handler)
-    
+
     print("\nPolling starts, interval: %d minute(s)." % period)
     print("Stop by pressing CTRL+C.\n")
+    iteration = 1                              # counter for polling loop
+
     while True:                                          # endless loop, break by CTRL+C
         print("#%s." % str(iteration))
         poll_sites(sites, words)
@@ -157,6 +160,6 @@ def main():
             print("\n[DEBUG] Sleeping %d seconds.\n" % 60 * period)
         time.sleep(60 * period)
         iteration += 1
-    
+
 if __name__ == "__main__":
     main()
