@@ -8,7 +8,7 @@ cd hunpress_deadcounter
 python3 -m venv venv
 source bin/activate
 pip install --upgrade -i https://pypi.org/simple pip
-pip install -i https://pypi.org/simple bs4 requests
+pip install -i https://pypi.org/simple bs4 requests matplotlib
 ```
 
 ### Script futtatása
