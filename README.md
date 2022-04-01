@@ -15,3 +15,9 @@ pip install -i https://pypi.org/simple bs4 requests
 ```
 ./counter.py
 ```
+
+### Script leállítása
+Leállítás után a script legenerálja a statisztikai ábrákat.
+```
+CTRL + C
+```
