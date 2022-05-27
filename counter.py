@@ -9,6 +9,11 @@ import signal
 import requests
 import sqlite3
 import datetime
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+from dateutil import parser
+from matplotlib import style
+style.use('fivethirtyeight')
 
 
 from enum import IntEnum
@@ -106,16 +111,42 @@ def poll_sites(sites, words):
 
 
 def ctrlc_handler(signum, frame):
-    print("\nPolling ended. Exiting.")
+    print("\nPolling ended.")
+    print("Plotting...")
+    plot_all()
     if sql:
         connection.close()
         if debug:
             print("[DEBUG] SQLite connection closed.")
-    sys.exit(1)
+
+    sys.exit(0)
+
+
+def graph_data(sitename):
+    cr = connection.cursor()
+    cr.execute("SELECT date, count FROM 'stats' WHERE word='sum' AND sitename='%s';" % sitename)
+
+    dates = []
+    counts = []
+
+    for row in cr.fetchall():
+        dates.append(parser.parse(row[0]))
+        counts.append(row[1])
+
+    # TODO: fine tune the chart's look and details
+    plt.plot_date(dates,counts,'-')
+    plt.savefig(sitename.split("//")[1] + ".png", format="png")
+    plt.close()
+
+
+def plot_all():
+    for sitename in sites:
+        graph_data(sitename)
 
 
 def main():
-    global connection, detailed, debug, sql    # SQLite connection, detailed mode, debug mode, SQLite storing
+    # SQLite connection, detailed mode, debug mode, SQLite storing, site names
+    global connection, detailed, debug, sql, sites
 
     # Runtime variables
     period = 1                                 # polling period in minutes
@@ -144,6 +175,7 @@ def main():
                  "áldozat": ["áldozati póz"],
                  "agyonvert": [],
                  "meggyilkol": [],
+                 "lelőtt": [],
                  "gyilkos": ["gyilkos tréfa"]
                 }
 
@@ -164,3 +196,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+## TODO: expose parameters, statistics: top, top average
