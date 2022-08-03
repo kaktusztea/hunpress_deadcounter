@@ -170,6 +170,8 @@ def main():
     # Searched keywords and their blacklisted exception phrases
     words = {
                  "meghal": ["meghall", "meghalad"],
+                 "halt meg": [],
+                 "haltak meg": [],
                  "halott": ["halottak napj", "halottaskocsi", "halottkém", "halottnak a csók", "halottkultusz"],
                  "megöl": ["megölel"],
                  "áldozat": ["áldozati póz"],
