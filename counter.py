@@ -176,6 +176,7 @@ def main():
                  "megöl": ["megölel"],
                  "áldozat": ["áldozati póz"],
                  "agyonvert": [],
+                 "agyonlő": [],
                  "meggyilkol": [],
                  "lelőtt": [],
                  "gyilkos": ["gyilkos tréfa"]
